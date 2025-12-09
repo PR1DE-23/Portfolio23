@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+html {
+  forced-color-adjust: none;
+}
+
+@layer base {
+  :root {
+    --color-background: 245 245 245;
+    --color-foreground: 18 18 18;
+    --color-acent: 61 61 61;
+
+    --card: 0 0% 100%;
+
+    --primary: 250 47% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+  }
+  
+  .dark {
+    --color-background: 18 18 18;
+    --color-foreground: 245 245 245 ;
+    --color-acent: 166 166 166;
+
+    --card: 222 47% 8%;
+
+    --primary: 250 65% 65%;
+    --primary-foreground: 213 31% 91%;
+
+    --border: 217 33% 20%;
+  }
+}
+
+
+
+ 

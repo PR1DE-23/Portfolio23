@@ -1,0 +1,17 @@
+---
+const { title = "Mi sitio" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/src/styles/tailwind.css" />
+  </head>
+
+  <body class="bg-background py-5">
+    <slot />
+  </body>
+</html> 

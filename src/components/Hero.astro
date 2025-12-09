@@ -1,0 +1,16 @@
+---
+import LargeButton from "./LargeButton.astro";
+import WebButtons from "./WebButtons.astro";
+import { Github, Linkedin } from "@lucide/astro";
+---
+
+
+<main class="container w-full text-foreground">
+  <h1 class="font-firaCode text-5xl my-12 font-bold flex flex-col tracking-widest">Front-end <span class="self-end">Developer</span></h1>
+  <p class="my-4 mr-6 text-acent ">Creo <span class="text-foreground">interfaces accesibles y responsivas</span>, priorizando la experiencia del usuario y respetando <span class="text-foreground">buenas prácticas de desarrollo.</span></p>
+  <LargeButton/>
+  <div class="flex gap-3">
+    <WebButtons label="Github" icon={Github}/>
+    <WebButtons label="Linkedin" icon={Linkedin}/>
+  </div>
+</main>

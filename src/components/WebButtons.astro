@@ -1,0 +1,8 @@
+---
+const { label, icon: Icon } = Astro.props;
+---
+
+<button class="flex items-center gap-2 px-4 py-2 border border-acent text-acent rounded-full">
+  {Icon && <Icon />}
+  <span>{label}</span>
+</button>
