@@ -4,7 +4,19 @@
 ---
 
  <header class="flex justify-between items-center text-acent w-full container">
-    <TextAlignJustify />
-    <p class="">deviloper</p>
+    <p class="flex flex-col">
+      <span class="">Daniel</span>
+      <span class="hidden md:flex">Carbajal</span>
+    </p>
+    
+    <nav class="hidden md:flex flex-1">
+      <ul class="flex w-full justify-evenly">
+        <li>About</li>
+        <li>Projects</li>
+        <li>Articles</li>
+        <li>Contats</li>
+      </ul>
+    </nav>
+    <TextAlignJustify class='md:hidden'/>
     <ThemeToggle />
   </header>

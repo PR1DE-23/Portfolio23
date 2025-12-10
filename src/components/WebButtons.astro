@@ -3,6 +3,6 @@ const { label, icon: Icon } = Astro.props;
 ---
 
 <button class="flex items-center gap-2 px-4 py-2 border border-acent text-acent rounded-full">
-  {Icon && <Icon />}
+  {Icon && <Icon class="text-foreground" size={16}/>}
   <span>{label}</span>
 </button>

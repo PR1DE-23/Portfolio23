@@ -1,16 +1,29 @@
 ---
 import LargeButton from "./LargeButton.astro";
 import WebButtons from "./WebButtons.astro";
-import { Github, Linkedin } from "@lucide/astro";
+import { Github, Linkedin, Facebook, Instagram } from "@lucide/astro";
 ---
 
 
-<main class="container w-full text-foreground">
-  <h1 class="font-firaCode text-5xl my-12 font-bold flex flex-col tracking-widest">Front-end <span class="self-end">Developer</span></h1>
-  <p class="my-4 mr-6 text-acent ">Creo <span class="text-foreground">interfaces accesibles y responsivas</span>, priorizando la experiencia del usuario y respetando <span class="text-foreground">buenas prácticas de desarrollo.</span></p>
-  <LargeButton/>
-  <div class="flex gap-3">
+<main class="relative container w-full text-foreground py-12">
+
+  <h1 class="font-firaCode text-[clamp(3rem,10vw,4rem)] lg:text-8xl mb-12 font-semibold leading-tight flex flex-col tracking-wide">Front-end <span class="self-end">Developer</span></h1>
+
+
+  <p class="text-base md:text-[14px] mb-6 w-4/5 text-acent leading-tight md:absolute md:top-36 md:left-10 md:w-2/5 lg:top-[9.5rem] lg:text-base">
+    My goal is to <span class="text-foreground italic">write maintainable, clean </span>and <span class="text-foreground italic">understandable code </span> to procces development was anjoyable.
+  </p>
+
+  <div class="md:absolute md:top-[4.3rem] md:right-10 lg:top-[5.2rem]">
+    <LargeButton />
+  </div>
+
+  <div class="flex gap-3 flex-wrap mb-6 md:justify-evenly">
     <WebButtons label="Github" icon={Github}/>
     <WebButtons label="Linkedin" icon={Linkedin}/>
+    <WebButtons label="Facebook" icon={Facebook}/>
+    <WebButtons label="Instagram" icon={Instagram}/>
   </div>
+
+
 </main>
