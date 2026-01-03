@@ -2,24 +2,25 @@
   import { TextAlignJustify } from '@lucide/astro';
 ---
 
- <header class="relative flex justify-between items-center text-acent border">
+<header class="relative flex justify-between items-center px-6 h-[72px] lg:h-20 text-acent">
   
-   <p class="flex flex-col">
-      <span>Daniel</span>
-      <span class="hidden md:flex">Carbajal</span>
-   </p>    
+  <p class="flex flex-col">
+    <span>Daniel</span>
+    <span class="hidden md:flex">Carbajal</span>
+  </p>    
     
-   <nav class="absolute left-1/2 -translate-x-1/2 hidden md:flex">
-      <ul class="flex border w-full justify-between gap-12">
-        <li>About</li>
-        <li>Projects</li>
-        <li>Articles</li>
-        <li>Contats</li>
-      </ul>
-    </nav>
-    <button class="hidden md:flex flex-col">
-      <span>En</span>
-      <span>Es</span>
-    </button> 
-    <TextAlignJustify class='md:hidden'/>
-  </header>
+  <nav class="absolute left-1/2 -translate-x-1/2 hidden md:flex">
+    <ul class="flex w-full justify-between gap-12">
+      <li>About</li>
+      <li>Projects</li>
+      <li>Articles</li>
+      <li>Contats</li>
+    </ul>
+  </nav>
+
+  <button class="hidden md:flex flex-col">
+    <span>En</span>
+    <span>Es</span>
+  </button> 
+  <TextAlignJustify class='md:hidden'/>
+</header>
