@@ -2,7 +2,7 @@
 const { label, icon: Icon } = Astro.props;
 ---
 
-<button class="flex items-center gap-2 px-4 py-2 border border-acent text-acent rounded-full">
-  {Icon && <Icon class="text-foreground" size={16}/>}
+<button class="flex items-center gap-2 px-4 py-2 border border-subtle text-muted text-sm rounded-full">
+  {Icon && <Icon class="text-fg" size={16}/>}
   <span>{label}</span>
 </button>

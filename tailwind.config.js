@@ -16,9 +16,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        background: "rgb(var(--color-background ))",
-        foreground: "rgb(var(--color-foreground))",
-        acent: "rgb(var(--color-acent))"
+        bg: "rgb(var(--color-bg))",
+        fg: "rgb(var(--color-fg))",
+        muted: "rgb(var(--color-muted))",
+        subtle: "rgb(var(--color-subtle))"
       },
       fontFamily: {
         firaCode: ['Fira Code', 'monospace'],

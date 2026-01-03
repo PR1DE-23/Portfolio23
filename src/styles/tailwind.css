@@ -10,15 +10,9 @@ html {
 
 @layer base {
   :root {
-    --color-background: 18 18 18;
-    --color-foreground: 245 245 245 ;
-    --color-acent: 166 166 166;
-
-    --card: 222 47% 8%;
-
-    --primary: 250 65% 65%;
-    --primary-foreground: 213 31% 91%;
-
-    --border: 217 33% 20%;
+    --color-bg: 18 18 18;
+    --color-fg: 245 245 245 ;
+    --color-muted: 166 166 166;
+    --color-subtle: 61 61 61; 
   }
 }
