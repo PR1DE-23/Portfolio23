@@ -19,7 +19,8 @@ module.exports = {
         bg: "rgb(var(--color-bg))",
         fg: "rgb(var(--color-fg))",
         muted: "rgb(var(--color-muted))",
-        subtle: "rgb(var(--color-subtle))"
+        subtle: "rgb(var(--color-subtle))",
+        focus: "rgb(var(--color-focus))"
       },
       fontFamily: {
         firaCode: ['Fira Code', 'monospace'],

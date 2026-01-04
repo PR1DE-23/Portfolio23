@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { ArrowLeft } from '@lucide/astro';
+---
+
+<BaseLayout title="404 - Página no encontrada">
+  <div class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative overflow-hidden">
+    
+    <!-- Background element -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-focus/5 to-transparent pointer-events-none"></div>
+
+    <div class="relative z-10 flex flex-col items-center gap-6 animate-fade-in-up">
+      <div class="relative">
+        <h1 class="text-[10rem] md:text-[14rem] font-bold text-transparent bg-clip-text bg-gradient-to-t from-focus/80 to-focus leading-none select-none">
+          404
+        </h1>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-bg blur-[2px] opacity-50 mix-blend-overlay text-[10rem] md:text-[14rem] font-bold pointer-events-none">
+          404
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <h2 class="text-3xl md:text-4xl font-bold text-fg">Página no encontrada</h2>
+        <p class="text-muted text-lg max-w-md mx-auto">
+          Lo sentimos, la página que estás buscando no existe o ha sido movida.
+        </p>
+      </div>
+
+      <a 
+        href="/" 
+        class="group flex items-center gap-3 px-8 py-4 bg-subtle hover:bg-focus/90 text-fg rounded-full transition-all duration-300 hover:scale-105 mt-8 border border-white/5 hover:border-focus/20 shadow-lg shadow-black/20"
+      >
+        <ArrowLeft class="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-1" />
+        <span class="font-semibold">Volver al inicio</span>
+      </a>
+    </div>
+
+    <!-- Decorative ring -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-focus/20 rounded-full blur-[120px] -z-10 opacity-30 animate-pulse-slow"></div>
+  </div>
+</BaseLayout>
+
+<style>
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+</style>

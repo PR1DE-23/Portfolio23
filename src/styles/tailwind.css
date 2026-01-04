@@ -12,7 +12,9 @@ html {
   :root {
     --color-bg: 18 18 18;
     --color-fg: 245 245 245 ;
+    --color-focus: 255 7 58;
     --color-muted: 166 166 166;
     --color-subtle: 61 61 61; 
+    
   }
 }

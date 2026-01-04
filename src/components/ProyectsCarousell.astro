@@ -1,0 +1,93 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import { ChevronLeft, ChevronRight } from "@lucide/astro";
+
+const projects = [
+  { title: "Plataforma Integral de Comercio Electrónico para Artesanos", description: "Una tienda virtual moderna que permite a pequeños productores gestionar inventarios, procesar pagos seguros y conectar con clientes globales.", image: "/p1.jpeg" },
+  { title: "Gestor de Tareas Colaborativo para Equipos Remotos", description: "Aplicación web de flujos que permite a equipos gestionar tareas, asignar responsabilidades y monitorear progreso.", image: "/p2.jpeg" },
+  { title: "Portal Web de Salud y Seguimiento Nutricional de Gestión de Inventario para Artesanos", description: "Portal Salud y Nutrición que ofrece información sobre nutrición, dietas, y herramientas para monitorear el progreso de los usuarios.", image: "/p3.jpeg" },
+  { title: "Red Social para Amantes de los Viajes", description: "Red Social Viajeros que permite a usuarios compartir experiencias, planificar viajes y obtener recomendaciones.", image: "/p4.jpeg" },
+  { title: "Plataforma de Cursos Online con Sistema Gamificado", description: "Entorno educativo gamificado que ofrece lecciones en video, exámenes interactivos y un sistema de recompensas para motivar el aprendizaje continuo.", image: "/p5.jpeg" },
+];
+---
+<div class="relative w-full max-w-5xl mx-auto overflow-hidden group">
+  <div 
+    id="carousel-track"
+    class="flex transition-transform duration-500 ease-out w-full"
+  >
+    {projects.map((project) => (
+      <div class="w-full flex-shrink-0">
+        <ProjectCard {...project}/>
+      </div>
+    ))}
+  </div>
+
+<div class="flex justify-center gap-4 mt-8">
+  <button id="prev-btn" class="p-3 rounded-full border border-subtle hover:bg-focus/10 transition-colors text-fg">
+    <ChevronLeft class="size-6"/>
+  </button>
+
+  <div class="flex items-center gap-3">
+      {projects.map((_, i) => (
+        <button 
+          data-index={i}
+          class="dot size-3 rounded-full bg-subtle/30 transition-all duration-300"
+        ></button>
+      ))}
+    </div>
+
+  <button id="next-btn" class="p-3 rounded-full border border-subtle hover:bg-focus/10 transition-colors text-fg">
+    <ChevronRight class="size-6"/>
+  </button>
+</div>
+</div>
+
+<script>
+  const track = document.getElementById('carousel-track');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const dots = document.querySelectorAll('.dot');
+  
+  let currentIndex = 0;
+  const totalSlides = 5;
+
+  function updateCarousel() {
+    // Movemos el track (cada slide ocupa el 100%)
+    if (track) {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // Actualizamos las bolitas
+    dots.forEach((dot, i) => {
+      if (i === currentIndex) {
+        dot.classList.add('bg-focus', 'scale-125');
+        dot.classList.remove('bg-subtle/30');
+      } else {
+        dot.classList.remove('bg-focus', 'scale-125');
+        dot.classList.add('bg-subtle/30');
+      }
+    });
+  }
+
+  // Eventos de botones
+  nextBtn?.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % totalSlides; // Ciclo infinito: vuelve al 0 al final
+    updateCarousel();
+  });
+
+  prevBtn?.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // Ciclo infinito hacia atrás
+    updateCarousel();
+  });
+
+  // Clic directo en las bolitas
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      currentIndex = i;
+      updateCarousel();
+    });
+  });
+
+  // Inicializar estado
+  updateCarousel();
+</script>

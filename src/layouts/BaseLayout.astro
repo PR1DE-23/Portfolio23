@@ -1,5 +1,5 @@
 ---
-const { title = "Mi sitio" } = Astro.props;
+const { title = "Mi sitio", showHeader = true } = Astro.props;
 import Header from '../components/Header.astro'
 ---
 
@@ -13,7 +13,7 @@ import Header from '../components/Header.astro'
   </head>
 
   <body class="bg-bg">
-    <Header />
+    {showHeader && <Header />}
     <slot />
   </body>
 </html> 

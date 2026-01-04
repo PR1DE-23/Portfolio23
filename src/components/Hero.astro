@@ -1,7 +1,9 @@
 ---
 import LargeButton from "./LargeButton.astro";
 import WebButtons from "./WebButtons.astro";
+import ProjectCard from "./ProjectCard.astro";
 import { Github, Linkedin, Facebook, Instagram, FileDown } from "@lucide/astro";
+import ProyectsCarousell from "./ProyectsCarousell.astro";
 ---
 
 
@@ -15,7 +17,7 @@ import { Github, Linkedin, Facebook, Instagram, FileDown } from "@lucide/astro";
   </p>
 
   <div class="mb-12 md:absolute md:top-[4.3rem] md:right-10 lg:top-[5.2rem]">
-    <LargeButton />
+    <LargeButton label="Projects"/>
   </div>
 
   <div class="flex gap-3 flex-wrap mb-6 md:justify-evenly">
@@ -25,6 +27,36 @@ import { Github, Linkedin, Facebook, Instagram, FileDown } from "@lucide/astro";
     <WebButtons label="Facebook" icon={Facebook}/>
     <WebButtons label="Instagram" icon={Instagram}/>
   </div>
-
-
+  
+  <ProyectsCarousell/>
 </main>
+
+{/* <div class="flex flex-wrap gap-12">
+  <ProjectCard 
+    title="Plataforma Integral de Comercio Electrónico para Artesanos" 
+    description="Una tienda virtual moderna que permite a pequeños productores gestionar inventarios, procesar pagos seguros y conectar con clientes globales." 
+    image="/public/p1.jpeg"
+  />
+  <ProjectCard 
+    title="Gestor de Tareas Colaborativo para Equipos Remotos" 
+    description="Aplicación web que facilita la organización de flujos de trabajo mediante tableros dinámicos, asignación de responsabilidades y seguimiento temporal." 
+    image="/public/p2.jpeg"
+  />
+  <ProjectCard 
+    title="Portal Web de Salud y Seguimiento Nutricional de Gestión de Inventario para Artesanos" 
+    description="Una Herramienta interactiva diseñada para registrar planes alimenticios, rutinas de ejercicio diario y visualizar el progreso físico de los usuarios." 
+    image="/public/p3.jpeg"
+  />
+  <ProjectCard 
+    title="Red Social para Amantes de los Viajes" 
+    description="Espacio digital donde viajeros comparten itinerarios detallados, fotografías de destinos exóticos y recomiendan lugares únicos a su comunidad global." 
+    image="/public/p4.jpeg"
+  />
+  <ProjectCard 
+    title="Plataforma de Cursos Online con Sistema Gamificado" 
+    description="Entorno educativo que ofrece lecciones en video, exámenes interactivos y un sistema de recompensas para motivar el aprendizaje continuo." 
+    image="/public/p5.jpeg"
+  />
+</div> */}
+
+

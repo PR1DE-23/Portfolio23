@@ -1,25 +1,98 @@
 ---
-  import { TextAlignJustify } from '@lucide/astro';
+  import { TextAlignJustify, X } from '@lucide/astro';
 ---
 <header class="relative flex justify-between items-center px-6 h-[72px] lg:h-20 text-fg text-lg">
-  
-  <p class="flex flex-col">
-    <span>Daniel</span>
-    <span class="hidden md:flex">Carbajal</span>
-  </p>    
+
+
+  <div class="flex items-center gap-4">
+    <img src="/public/dev-logo.png" alt="logo" class=" rounded-full w-10 h-10">
+    <a href="/" class="flex flex-col font-bold hover:text-focus transition-all duration-200 cursor-pointer">
+        <span>Daniel Carbajal</span>
+      </a>  
+  </div>
     
-  <nav class="absolute left-1/2 -translate-x-1/2 hidden md:flex">
+  <nav class="hidden sm:flex">
     <ul class="flex w-full justify-between gap-12">
-      <li>About</li>
-      <li>Projects</li>
-      <li>Articles</li>
-      <li>Contats</li>
+      <li class="group relative py-2 transition-all duration-200">
+        <a href="/">Home</a>
+        <span class="absolute bottom-2 right-0 h-1 w-full bg-focus origin-right scale-x-0 transition-all duration-200 group-hover:scale-x-100"></span>
+      </li>
+      <li class="group relative py-2 transition-all duration-200">
+        <a href="/about">About</a>
+        <span class="absolute bottom-2 right-0 h-1 w-full bg-focus origin-right scale-x-0 transition-all duration-200 group-hover:scale-x-100"></span>
+      </li>
+      <li class="group relative py-2 transition-all duration-200">
+        <a href="/projects">Projects</a>
+        <span class="absolute bottom-2 right-0 h-1 w-full bg-focus origin-right scale-x-0 transition-all duration-200 group-hover:scale-x-100"></span>
+      </li>
+      <li class="group relative py-2 transition-all duration-200">
+        <a href="/contact">Contact</a>
+        <span class="absolute bottom-2 right-0 h-1 w-full bg-focus origin-right scale-x-0 transition-all duration-200 group-hover:scale-x-100"></span>
+      </li>
     </ul>
   </nav>
+  
+  <button id="menu-btn" class="group w-10 h-10 flex items-center justify-center relative sm:hidden rounded-md p-1 hover:bg-focus/10 transition-colors duration-200" aria-expanded="false">
+    <TextAlignJustify class="absolute inset-0 m-auto w-6 h-6 transition-all duration-300 ease-in-out group-[.open]:opacity-0 group-[.open]:rotate-90"/>
+    <X class="absolute inset-0 m-auto w-6 h-6 transition-all duration-300 ease-in-out opacity-0 -rotate-90 group-[.open]:opacity-100 group-[.open]:rotate-90"/>
+  </button>
 
-  <button class="hidden md:flex flex-col">
-    <span>En</span>
-    <span>Es</span>
-  </button> 
-  <TextAlignJustify class='md:hidden'/>
+  <div 
+    id="menu" 
+    class="absolute top-[72px] right-0 w-full bg-bg border-y border-subtle z-40 sm:hidden opacity-0 invisible -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out [&.open]:opacity-100 [&.open]:visible [&.open]:translate-y-0 [&.open]:pointer-events-auto" 
+  >
+    <ul class="flex flex-col divide-y divide-subtle">
+      <li class="text-end hover:bg-focus/10 cursor-pointer transition-colors duration-200">
+        <a href="/" class="block size-full p-5">Home</a>
+      </li>
+      <li class="text-end hover:bg-focus/10 cursor-pointer transition-colors duration-200">
+        <a href="/about" class="block size-full p-5">About</a>
+      </li>
+      <li class="text-end hover:bg-focus/10 cursor-pointer transition-colors duration-200">
+        <a href="/projects" class="block size-full p-5">Projects</a>
+      </li>
+      <li class="text-end hover:bg-focus/10 cursor-pointer transition-colors duration-200">
+        <a href="/contact" class="block size-full p-5">Contact</a>
+      </li>
+    </ul>
+  </div>
+  
 </header>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+
+  const closeMenu = () => {
+    btn?.classList.remove('open');
+    menu?.classList.remove('open');
+    btn?.setAttribute('aria-expanded', 'false');
+  }
+
+  btn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+
+    btn?.classList.toggle('open');
+    menu?.classList.toggle('open');
+
+    const isOpen = btn?.classList.contains('open');
+    btn?.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.addEventListener('click', (event) => {
+    const target = event.target as Node;
+    const isClickInsideMenu = menu?.contains(target);
+    const isClickBtnButton = btn?.contains(target);
+    
+    if (!isClickInsideMenu && !isClickBtnButton && btn?.classList.contains('open')) {
+      closeMenu();
+    }
+  });
+
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+</script>
