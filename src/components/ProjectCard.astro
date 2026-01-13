@@ -4,9 +4,9 @@ import LargeButton from "./LargeButton.astro";
 const { title, description, image } = Astro.props;
 ---
 
-<div class="relative flex flex-col items-center container gap-4 rounded-3xl">
-  <img src={image} alt={title} class="w-full h-100 object-cover rounded-3xl">
-  <div class="absolute bottom-0 right-8 left-8 gap-5 flex flex-col bg-black/50 p-6 rounded-b-3xl">
+<div class="relative flex flex-col items-center gap-4 rounded-xl xs:">
+  <img src={image} alt={title} class="w-full h-100 xs:h-80 object-cover rounded-xl">
+  <div class="absolute bottom-0 right-0 left-0 xs:left-52 xs:top-0 gap-5 flex flex-col bg-black/50 p-6 rounded-b-xl">
     <h2 class="text-fg text-lg font-firaCode font-bold">{title}</h2>
     <p class="text-fg text-sm font-sans">{description}</p>
     <LargeButton label="View Project" fontSize="14px" bg="bg-transparent" border="border border-fg"/>

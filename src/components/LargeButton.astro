@@ -8,7 +8,7 @@ const {
 } = Astro.props;
 ---
 
-<button class={`flex items-stretch gap-3 w-72 group/button hover:translate-x-2 transition-all duration-200 ${fontSize}`}>
-  <span class={`flex w-full justify-center items-center text-fg font-bold italic rounded-full ${bg} ${border}`}>{label}</span>
-  <span class={`flex items-center justify-center p-3 text-fg rounded-full ${bg} ${border}`}><ArrowRight class="size-[1em] transition-transform group-hover/button:-rotate-45" /></span>
+<button class={`flex items-stretch gap-2 w-60 group/button hover:translate-x-2 transition-all duration-200 ${fontSize}`}>
+  <span class={`flex w-full justify-center items-center text-fg font-bold italic rounded-xl ${bg} ${border}`}>{label}</span>
+  <span class={`flex items-center justify-center text-fg p-4 rounded-xl ${bg} ${border}`}><ArrowRight class="size-[1em] transition-transform group-hover/button:-rotate-45" /></span>
 </button>

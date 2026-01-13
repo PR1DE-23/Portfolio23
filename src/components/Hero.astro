@@ -1,33 +1,23 @@
 ---
-import LargeButton from "./LargeButton.astro";
-import WebButtons from "./WebButtons.astro";
-import { Github, Linkedin, Facebook, Instagram, FileDown } from "@lucide/astro";
-import ProyectsCarousell from "./ProyectsCarousell.astro";
+
 ---
 
 
-<div class="relative w-full pt-12 container">
+<div class="flex flex-col md:flex-row w-full pt-12 gap-0 container">
+  <div class="max-w-[700px]">
 
-  <h1 class="font-firaCode text-fg text-[clamp(3.5rem,10vw,4rem)] lg:text-8xl mb-12 font-semibold leading-tight flex flex-col tracking-wide">Front-end <span class="self-end">Developer</span></h1>
+    <p class="font-firaCode text-lg md:text-[14px] mb-6 w-full text-muted leading-tight lg:text-lg"><span class="text-focus font-firaCode font-bold">&lt;span&gt;</span> Hey, I'm Daniel <span class="text-focus font-firaCode font-bold">&lt;/span&gt;</span></p>
+
+    <h1 class="font-firaCode text-fg text-[5rem] xs:text-8xl mb-6 font-semibold leading-tight flex flex-col tracking-wide">
+      <span class="text-focus">{`{Front-end}`}</span> 
+      <span class="self-end md:self-start">Developer__</span>
+    </h1>
+
+    <p class="font-firaCode text-lg md:text-[14px] mb-6 w-full text-muted leading-tight lg:text-lg">
+      <span class="text-focus font-firaCode font-bold">&lt;p&gt; </span>Desarrollo interfaces basadas en <span class="text-fg italic">código mantenible, limpio </span> y <span class="text-fg italic">fácil de entender </span>, logrando que el proceso de trabajo sea siempre fluido y disfrutable. <span class="text-focus font-firaCode font-bold">&lt;p&gt;</span>
+    </p>
 
 
-  <p class="text-lg md:text-[14px] mb-6 w-4/5 text-muted leading-tight md:absolute md:top-36 md:left-10 md:w-2/5 lg:top-[9.5rem] lg:text-base">
-    My goal is to <span class="text-fg italic">write maintainable, clean </span>and <span class="text-fg italic">understandable code </span> to procces development was anjoyable.
-  </p>
-
-  <div class="mb-12 md:absolute md:top-[4.3rem] md:right-10 lg:top-[5.2rem]">
-    <LargeButton label="Projects"/>
-  </div>
-
-  <div class="flex gap-3 flex-wrap mb-6 md:justify-evenly">
-    <WebButtons label="Download CV" icon={FileDown}/>
-    <WebButtons label="Github" icon={Github}/>
-    <WebButtons label="Linkedin" icon={Linkedin}/>
-    <WebButtons label="Facebook" icon={Facebook}/>
-    <WebButtons label="Instagram" icon={Instagram}/>
   </div>
 
 </div>
-<ProyectsCarousell />
-
-
